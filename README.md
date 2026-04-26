@@ -1,7 +1,7 @@
 
 <div align="center">
 
-<h1>Contact Explorer</h1>
+<h1>ContactExplorer</h1>
 
   <p>
     <a href="https://contact-coverage-guided-exploration.github.io/"><img alt="Website" src="https://img.shields.io/badge/Website-Visit-2F6DB3?style=for-the-badge&logo=google-chrome&logoColor=grey&labelColor=eaeaea" /></a>
@@ -29,7 +29,7 @@
 
 ## Highlights
 
-**Contact Explorer** is a exploration method for dexterous manipulation. It defines contact as the intersection between object surface points and hand keypoints, and maintains a hash-conditioned counter of *which fingers touch which object regions*.
+**ContactExplorer** is a exploration method for dexterous manipulation. It defines contact as the intersection between object surface points and hand keypoints, and maintains a hash-conditioned counter of *which fingers touch which object regions*.
 
 - **Coverage reward** (count-based) rewards novel contact patterns.
 - **Reaching reward** (energy-based) steers the hand toward under-explored regions.
