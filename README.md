@@ -174,32 +174,7 @@ The **CCGE** exploration signal consists of `energy_reach` and `contact_coverage
   - `task/` — task/environment configs
   - `train/` — training configs
 
-# CCGE Reward Architecture
-
-```mermaid
-graph TD
-    subgraph Inputs
-        KP["Hand Keypoints<br/><i>(L points from URDF)</i>"]
-        PC["Canonical Object<br/>Point Cloud + Normals<br/><i>(M points)</i>"]
-        SFB["State Feature Bank<br/><i>LearnedHashStateBank /<br/>PushBox2DStateBank</i>"]
-    end
-
-    PC -->|K-means + FPS| CL["Surface Clusters<br/><i>(K clusters)</i>"]
-    PC --> CRM
-    CL --> CRM
-    KP --> CRM
-    SFB -->|state ID| CRM
-
-    subgraph CRM ["CuriosityRewardManager"]
-        POT["Energy-based Reaching Reward Φ<br/><i>novelty-weighted kernel</i>"]
-        CB["Contact Coverage Reward<br/><i>cluster novelty</i>"]
-        RM["Running-Max Tracker<br/><i>per state × keypoint</i>"]
-    end
-
-    CRM --> REW["<b>CCGE Reward = Energy-based Reaching Reward + Contact Coverage Reward</b>"]
-```
-
-### Required Data
+# Required Data
 
 Each task must supply these tensors per step (N = num envs, L = keypoints, M = object points):
 
